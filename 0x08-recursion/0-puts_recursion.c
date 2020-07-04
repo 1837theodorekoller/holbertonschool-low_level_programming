@@ -1,19 +1,16 @@
 #include "holberton.h"
-
 /**
- * _puts_recursion - Prints a string
- * @s: string to print
- *
- * Return: no return
+ *_puts_recursion - prints a string with recursion
+ *@s: a string
+ *Return: void
  */
 void _puts_recursion(char *s)
 {
-	if (*s)
+	if (*s == '\0')
 	{
-		_putchar(*s);
-		s++;
-		_puts_recursion(s);
+		_putchar ('\n');
+		return;
 	}
-	else
-		_putchar(10);
+	_putchar (*s);
+	_puts_recursion(s + 1);
 }
